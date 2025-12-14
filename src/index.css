@@ -1,0 +1,185 @@
+/* StreamList Custom Layout (SMALLER IMAGES) */
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0b1220;
+  color: #e8eefc;
+}
+
+.appShell {
+  min-height: 100vh;
+}
+
+.navHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 18, 32, 0.85);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 700;
+}
+
+.brandIcon {
+  font-size: 20px;
+}
+
+.brandText {
+  letter-spacing: 0.3px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 14px;
+}
+
+.navLinks a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #e8eefc;
+  opacity: 0.9;
+}
+
+.navLinks a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  opacity: 1;
+}
+
+.navLinks a.active {
+  background: rgba(99, 179, 237, 0.18);
+  outline: 1px solid rgba(99, 179, 237, 0.35);
+}
+
+.mainContent {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 22px 16px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.pageTitle {
+  margin: 0 0 6px 0;
+  font-size: 28px;
+}
+
+.pageSubtitle {
+  margin: 0 0 16px 0;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+.formRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.textInput {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.22);
+  color: #e8eefc;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  background: #63b3ed;
+  color: #081322;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primaryBtn:hover {
+  filter: brightness(1.05);
+}
+
+.hintBox {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  opacity: 0.9;
+}
+
+.srOnly {
+  position: absolute;
+  left: -9999px;
+}
+
+/* StreamList Custom Images */
+.streamCard {
+  position: relative;
+  text-align: center;
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cinemaBanner {
+  width: 80%; /* Adjust size */
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.iconRow {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movieIcon, .playIcon, .stopIcon {
+  width: 50px; /* Smaller size for icons */
+  height: 50px;
+}
+
+.textInput {
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.primaryBtn {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
