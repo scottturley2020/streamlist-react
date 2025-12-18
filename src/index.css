@@ -1,185 +1,131 @@
-/* StreamList Custom Layout (SMALLER IMAGES) */
-:root {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
-
+/* Global reset */
 * {
   box-sizing: border-box;
 }
 
+/* Page background */
 body {
   margin: 0;
-  background: #0b1220;
-  color: #e8eefc;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e6f4ea; /* light green background */
+  color: #1f2933;
 }
 
-.appShell {
+/* Root container */
+#root {
   min-height: 100vh;
-}
-
-.navHeader {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(10, 18, 32, 0.85);
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center; /* vertical centering */
+  padding: 32px;
 }
 
-.brand {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  font-weight: 700;
-}
-
-.brandIcon {
-  font-size: 20px;
-}
-
-.brandText {
-  letter-spacing: 0.3px;
-}
-
-.navLinks {
-  display: flex;
-  gap: 14px;
-}
-
-.navLinks a {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  padding: 8px 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #e8eefc;
-  opacity: 0.9;
-}
-
-.navLinks a:hover {
-  background: rgba(255, 255, 255, 0.06);
-  opacity: 1;
-}
-
-.navLinks a.active {
-  background: rgba(99, 179, 237, 0.18);
-  outline: 1px solid rgba(99, 179, 237, 0.35);
-}
-
-.mainContent {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 22px 16px;
-}
-
+/* Main application card */
 .card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 16px;
-  padding: 18px;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 1200px; /* larger width */
+  min-height: 85vh;  /* take up most of the page height */
+  padding: 36px;
+  border-radius: 20px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
 }
 
+/* Headings */
 .pageTitle {
-  margin: 0 0 6px 0;
-  font-size: 28px;
+  margin: 0 0 8px;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .pageSubtitle {
-  margin: 0 0 16px 0;
-  opacity: 0.85;
-  line-height: 1.4;
+  margin: 0 0 24px;
+  color: #4b5563;
+  font-size: 1.05rem;
 }
 
+/* Form layout */
 .formRow {
   display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
+/* Text input */
 .textInput {
   flex: 1;
-  padding: 10px 12px;
+  padding: 14px;
+  font-size: 1rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(0, 0, 0, 0.22);
-  color: #e8eefc;
+  border: 1px solid #cfd6e4;
+  outline: none;
 }
 
+.textInput:focus {
+  border-color: #34a853;
+  box-shadow: 0 0 0 2px rgba(52, 168, 83, 0.25);
+}
+
+/* Primary buttons */
 .primaryBtn {
   display: inline-flex;
-  gap: 8px;
   align-items: center;
-  padding: 10px 12px;
+  gap: 8px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: 600;
   border-radius: 12px;
   border: none;
-  background: #63b3ed;
-  color: #081322;
-  font-weight: 700;
+  background-color: #34a853;
+  color: #ffffff;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .primaryBtn:hover {
-  filter: brightness(1.05);
+  background-color: #2e8e46;
 }
 
-.hintBox {
-  margin-top: 14px;
-  padding: 12px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.22);
-  border: 1px dashed rgba(255, 255, 255, 0.18);
-  opacity: 0.9;
+.primaryBtn:active {
+  transform: scale(0.97);
 }
 
+/* Screen-reader only */
 .srOnly {
   position: absolute;
-  left: -9999px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-/* StreamList Custom Images */
-.streamCard {
-  position: relative;
-  text-align: center;
+/* Utility spacing */
+.mt-16 {
+  margin-top: 16px;
 }
 
-.imageSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+/* Image responsiveness */
+.card img {
+  max-width: 100%;
+  height: auto;
 }
 
-.cinemaBanner {
-  width: 80%; /* Adjust size */
-  max-width: 500px;
-  margin-bottom: 20px;
-}
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .card {
+    min-height: auto;
+    padding: 24px;
+  }
 
-.iconRow {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
+  .formRow {
+    flex-direction: column;
+  }
 
-.movieIcon, .playIcon, .stopIcon {
-  width: 50px; /* Smaller size for icons */
-  height: 50px;
-}
+  .primar
 
-.textInput {
-  padding: 12px;
-  font-size: 16px;
-  margin-bottom: 12px;
-}
-
-.primaryBtn {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 12px;
-}
